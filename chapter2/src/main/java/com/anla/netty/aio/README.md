@@ -7,7 +7,3 @@
 1. 客户端发起的连接是异步的，可以利用多路复用其注册OP——CONNECT等待后续结果
 2. SocketChannel的读写操作都是异步的，如果没有可读写数据它不回同步等待，直接返回
 3. 线程模型的优化：Selector使用Linux上主流的epoll实现，没有连接句柄限制，可以同时受理成千上万请求
-
-## JDK NIO bug
-epoll bug，它会导致Selector空轮询，最终导致CPU 100%，官方声明在JDK1.6版本update18中修复，
-但在JDK1.7仍然存在。
