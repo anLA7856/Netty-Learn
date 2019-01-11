@@ -1,9 +1,11 @@
-##介绍：
-该例子是一个传统的NIO运行例子，使用NIO基本类来构造程序.
-1. 运行`com.anla.netty.nio.TimeServer.java`
-2. 运行`com.anla.netty.nio.TimeClient.java`
+/##介绍：
+该例子是一个传统的AIO运行例子，使用NIO基本类来构造程序.
+1. 运行`com.anla.netty.aio.TimeServer.java`
+2. 运行`com.anla.netty.aio.TimeClient.java`
 
 ## NIO有点
-1. 客户端发起的连接是异步的，可以利用多路复用其注册OP——CONNECT等待后续结果
-2. SocketChannel的读写操作都是异步的，如果没有可读写数据它不回同步等待，直接返回
-3. 线程模型的优化：Selector使用Linux上主流的epoll实现，没有连接句柄限制，可以同时受理成千上万请求
+1. 通过java.util.concurrent.Futrue类来标识异步操作的结果
+2. 在执行异步操作的时候作为操作完成的回调
+
+NIO2.0的异步套接自通道是真正的异步非阻塞I/O，对应于UNIX网络编程中的事件驱动I/O（AIO）。
+它不需要多路复用器对注册的通道进行轮询操作即可实现异步读写，从而简化了NIO的编程模型。
