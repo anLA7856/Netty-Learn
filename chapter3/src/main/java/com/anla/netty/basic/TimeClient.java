@@ -1,4 +1,4 @@
-package com.anla.netty.nettyio;
+package com.anla.netty.basic;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

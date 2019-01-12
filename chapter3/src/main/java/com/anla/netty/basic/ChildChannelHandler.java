@@ -1,4 +1,4 @@
-package com.anla.netty.nettyio;
+package com.anla.netty.basic;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
