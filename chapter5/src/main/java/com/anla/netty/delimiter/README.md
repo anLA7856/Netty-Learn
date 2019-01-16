@@ -2,8 +2,8 @@
 基于`DelimiterBaseFrameDecoder`解决上一个例子的粘包
 
 ## 运行
-1. 运行`com.anla.netty.delimiter.TimeServer.java`
-2. 运行`com.anla.netty.delimiter.TimeClient.java`
+1. 运行`com.anla.netty.delimiter.EchoServer.java`
+2. 运行`com.anla.netty.delimiter.EchoClient.java`
 
 ## `DelimiterBasedFrameDecoder` 原理
 自动完成以分隔符作为结束标志的消息的解码。
