@@ -73,7 +73,7 @@ public class HttpFileServerHandler extends SimpleChannelInboundHandler<FullHttpR
             return;
         }
         long fileLength = randomAccessFile.length();
-        HttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
+        HttpResponse response = new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
         setContentLength(response, fileLength);
         setContentTypeHeader(response, file);
         if (isKeepAlive(fullHttpRequest)) {
