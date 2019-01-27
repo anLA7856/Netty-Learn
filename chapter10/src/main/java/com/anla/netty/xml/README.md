@@ -16,3 +16,23 @@ JiBx官网有详细的文档： [http://jibx.sourceforge.net/](http://jibx.sourc
 `java -cp /home/anla7856/下载/jibx/jibx/lib/jibx-bind.jar:bin org.jibx.binding.Compile -v binding.xml`
 此处binding.xml需要在target目录下，如果懒得使用自己生成binding.xml,也可以用我的binding.xml，在chapter10根目录下。
 但是需要指定binding.xml文件目录
+
+
+## HTTP+XML例子程序
+程序的思路是，基于上一个小例子http文件服务器基础上，对自定义实现的netty实现的服务器进行进一步封装
+在handler里面处理消息，而消息的格式则为xml，使用的xml解析工具为JiBx，（当然也可以为我们熟悉的json）。
+
+### 运行方法
+0. 注意运行时候，需要在有已经编译好的JiBx的class文件
+1. 运行`HttpXmlServer.java`
+2. 运行`HttpXmlClient.java`
+
+### 以下为client端的channel详情
+```
+                            ch.pipeline().addLast("http-decoder", new HttpResponseDecoder());   // 讲二进制iu解码为http应答消息
+                            ch.pipeline().addLast("http-aggregator", new HttpObjectAggregator(65535));  //讲1个Http请求消息的多个部分合并成一条完整的HTTP消息
+                            ch.pipeline().addLast("xml_decoder", new HttpXmlResponseDecoder(Order.class, true));   // xml消息自动解码
+                            ch.pipeline().addLast("http-encoder", new HttpRequestEncoder());
+                            ch.pipeline().addLast("xml-encoder", new HttpXmlRequestEncoder());
+                            ch.pipeline().addLast("xmlClientHandler", new HttpXmlClientHandler());
+```
