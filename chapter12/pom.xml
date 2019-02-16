@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>chapter9</artifactId>
+    <artifactId>chapter12</artifactId>
     <dependencies>
         <dependency>
             <groupId>io.netty</groupId>
@@ -24,18 +24,13 @@
             <artifactId>slf4j-log4j12</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java</artifactId>
-            <version>3.6.1</version>
-        </dependency>
-        <dependency>
             <groupId>org.jboss.marshalling</groupId>
             <artifactId>jboss-marshalling</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.jboss.marshalling</groupId>
-            <artifactId>jboss-marshalling-serial</artifactId>
-            <version>2.0.5.Final</version>
+            <groupId>org.msgpack</groupId>
+            <artifactId>msgpack</artifactId>
+            <version>0.6.12</version>
         </dependency>
     </dependencies>
 
