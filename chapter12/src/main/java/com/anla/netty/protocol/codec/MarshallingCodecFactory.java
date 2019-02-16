@@ -1,5 +1,4 @@
 package com.anla.netty.protocol.codec;
-
 import org.jboss.marshalling.*;
 
 import java.io.IOException;
@@ -21,8 +20,7 @@ public class MarshallingCodecFactory {
     }
 
     protected static Unmarshaller buildUnMarshalling() throws IOException {
-        final MarshallerFactory marshallerFactory = Marshalling
-                .getProvidedMarshallerFactory("serial");
+        final MarshallerFactory marshallerFactory = Marshalling.getProvidedMarshallerFactory("serial");
         final MarshallingConfiguration configuration = new MarshallingConfiguration();
         configuration.setVersion(5);
         final Unmarshaller unmarshaller = marshallerFactory

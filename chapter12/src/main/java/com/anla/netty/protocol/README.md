@@ -1,5 +1,9 @@
 ## Netty私有协议栈
 
+### 运行方式
+启动NettyServer
+启动NettyClient
+
 ###前言
 由于现代软件系统的复杂性，一个大型软件系统往往被人为拆分为多个模块，另外随着移动互联网的兴起，网站规模越来越大，业务功能越来越多，
 为了能够支撑业务发展，往往需要集群分布式部署，这样，各个模块之间就要进行跨节点通信。
@@ -34,3 +38,10 @@
 使用Netty中的attachment来增加可选附件。
 Netty协议栈架构需要具备一定的扩展能力，例如统一的消息拦截，接口日志，安全，加密解密等，方便的添加或者删除，
 不需要修改之前的逻辑代码，类似于Servlet的FilterChain和AOP，但考虑到性能因素，不推荐通过AOP来实现功能扩展。
+
+### 编写调试中问题
+1. Client端一直显示无法连接到服务器，并且`Marshalling.getProvidedMarshallerFactory("serial");` 一直返回null
+    原因：没有引入`Marshalling-serial`包
+2. 连接上后，`Client`端发送的消息，`Server`一直无法接收。
+    原因：`Encode`类写的有问题，导致实际无法发送信息，由于是根据书本上代码来，经过仔细检查，发现由于
+    权威指南上`NettyMessageEncoder`继承`MessageToMessageEncoder`，而实际上应该继承`MessageToByteEncoder`    
