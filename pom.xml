@@ -31,6 +31,7 @@
         <module>chapter16</module>
         <module>chapter17</module>
         <module>chapter18</module>
+        <module>chapter19</module>
     </modules>
 
     <dependencyManagement>
