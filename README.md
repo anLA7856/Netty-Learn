@@ -25,3 +25,6 @@
 21.  [Chapter22](https://github.com/anLA7856/Netty-Learn/tree/master/chapter22) 高性能之道
 22.  [Chapter23](https://github.com/anLA7856/Netty-Learn/tree/master/chapter23) 可靠性
 23.  [Chapter24](https://github.com/anLA7856/Netty-Learn/tree/master/chapter24) 安全性
+
+如果对你有帮助，不妨关注下博主，共同交流：
+![公众号](https://img-blog.csdnimg.cn/20190322125211529.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2FuTEFf,size_16,color_FFFFFF,t_70)
