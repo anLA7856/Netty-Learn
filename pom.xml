@@ -12,6 +12,7 @@
     <properties>
         <jackson-version>2.9.8</jackson-version>
         <netty-all.version>4.1.38.Final</netty-all.version>
+        <netty-all-five.version>5.0.0.Alpha1</netty-all-five.version>
         <lombok.version>1.16.12</lombok.version>
         <fastjson.version>1.2.29</fastjson.version>
         <junit.version>4.12</junit.version>
@@ -41,6 +42,9 @@
         <module>chapter22</module>
         <module>chapter23</module>
         <module>chapter24</module>
+        <module>netty-api</module>
+        <module>netty-chatroom</module>
+        <module>pure-nio</module>
     </modules>
 
     <dependencyManagement>
@@ -53,7 +57,7 @@
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
-                <version>${netty-all.version}</version>
+                <version>${netty-all-five.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.marshalling</groupId>
