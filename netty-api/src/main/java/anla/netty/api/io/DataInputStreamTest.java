@@ -1,8 +1,10 @@
-package anla.netty.api;
+package anla.netty.api.io;
 
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+
+import static anla.netty.api.io.FileReaderTest.FILE_NAME;
 
 /**
  *
@@ -15,7 +17,7 @@ public class DataInputStreamTest {
 
     private static void readData() throws IOException {
         DataInputStream input = new DataInputStream(
-                new FileInputStream("/home/anla7856/workspace/io.examples/pom.xml"));
+                new FileInputStream(FILE_NAME));
         int data = input.readInt();
         System.out.println(data);
     }

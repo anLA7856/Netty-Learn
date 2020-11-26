@@ -1,4 +1,4 @@
-package anla.netty.api;
+package anla.netty.api.io;
 
 import java.io.IOException;
 import java.io.StringReader;

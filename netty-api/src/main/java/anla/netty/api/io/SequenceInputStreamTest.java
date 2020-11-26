@@ -1,9 +1,11 @@
-package anla.netty.api;
+package anla.netty.api.io;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.SequenceInputStream;
+
+import static anla.netty.api.io.FileReaderTest.FILE_NAME;
 
 /**
  *
@@ -17,8 +19,8 @@ import java.io.SequenceInputStream;
 public class SequenceInputStreamTest {
 
     public static void main(String[] args) throws FileNotFoundException {
-        InputStream input1 = new FileInputStream("/home/anla7856/workspace/io.examples/file1.txt");
-        InputStream input2 = new FileInputStream("/home/anla7856/workspace/io.examples/file2.txt");
+        InputStream input1 = new FileInputStream(FILE_NAME);
+        InputStream input2 = new FileInputStream(FILE_NAME);
         InputStream combined = new SequenceInputStream(input1, input2);
 
 

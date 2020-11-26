@@ -1,6 +1,8 @@
-package anla.netty.api;
+package anla.netty.api.io;
 
 import java.io.*;
+
+import static anla.netty.api.io.FileReaderTest.FILE_NAME;
 
 /**
  * @author luoan
@@ -16,7 +18,7 @@ public class FileInputStreamTest {
 
 
     private static void read() throws FileNotFoundException, IOException {
-        File file = new File("/home/anla7856/workspace/io.examples/pom.xml");
+        File file = new File(FILE_NAME);
         byte[] data = new byte[1024];
         int length = new FileInputStream(file).read(data);
         System.out.println(length);
@@ -32,7 +34,7 @@ public class FileInputStreamTest {
     }
 
     private static void write() throws UnsupportedEncodingException, IOException {
-        File file = new File("/home/anla7856/workspace/io.examples/pom1.xml");
+        File file = new File(FILE_NAME);
         FileOutputStream fos = new FileOutputStream(file);
         OutputStream output = new BufferedOutputStream(fos);
         output.write("This text is converted to bytes".getBytes("utf-8"));

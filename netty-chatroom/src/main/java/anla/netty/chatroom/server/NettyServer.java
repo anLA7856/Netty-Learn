@@ -3,6 +3,7 @@ package anla.netty.chatroom.server;
 import anla.netty.chatroom.codec.PacketDecoder;
 import anla.netty.chatroom.codec.PacketEncoder;
 import anla.netty.chatroom.codec.Spliter;
+import anla.netty.chatroom.server.handler.FirstServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -56,7 +57,7 @@ public class NettyServer {
                 .childOption(ChannelOption.TCP_NODELAY, true)
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     protected void initChannel(NioSocketChannel ch) {
-//                        ch.pipeline().addLast(new FirstServerHandler());
+                        ch.pipeline().addLast(new FirstServerHandler());
                         ch.pipeline().addLast(new IdleStateHandler(5,5,5, TimeUnit.SECONDS));
                         ch.pipeline().addLast(new Spliter());
                         ch.pipeline().addLast(new PacketDecoder());

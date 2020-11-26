@@ -1,6 +1,8 @@
-package anla.netty.api;
+package anla.netty.api.io;
 
 import java.io.*;
+
+import static anla.netty.api.io.FileReaderTest.FILE_NAME;
 
 /**
  * @author luoan
@@ -10,7 +12,7 @@ import java.io.*;
 public class InputStreamReaderTest {
 
     private static void reader1() throws IOException {
-        Reader read = new InputStreamReader(new FileInputStream(new File("/home/anla7856/workspace/io.examples/pom.xml")),"UTF-8");
+        Reader read = new InputStreamReader(new FileInputStream(new File(FILE_NAME)),"UTF-8");
         int data = read.read();
         while(data != -1){
             System.out.print((char)data);
