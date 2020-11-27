@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
 
+import static anla.netty.api.io.FileReaderTest.FILE_NAME;
+
 /**
  *
  * LineNumberReader是记录了已读取数据行号的BufferedReader。
@@ -18,7 +20,7 @@ public class LineNumberReaderTest {
 
     public static void main(String[] args) throws IOException {
         LineNumberReader lineNumberReader =
-                new LineNumberReader(new FileReader("/home/anla7856/workspace/io.examples/input.txt"));
+                new LineNumberReader(new FileReader(FILE_NAME));
 
         int data = lineNumberReader.read();
         while(data != -1){

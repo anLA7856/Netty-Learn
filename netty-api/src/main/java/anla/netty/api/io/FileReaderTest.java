@@ -9,13 +9,15 @@ import java.io.*;
  **/
 public class FileReaderTest {
 
+    public static final String FILE_NAME = "C:\\Users\\35049\\Desktop\\141json.txt";
+
     public static void main(String[] args) throws IOException {
         reader();
         reader1();
     }
 
     private static void reader() throws IOException {
-        Reader read = new FileReader("/home/anla7856/workspace/io.examples/pom.xml");
+        Reader read = new FileReader(FILE_NAME);
         int data = read.read();
         while(data != -1){
             System.out.print((char)data);     //读出的是字符，所以通过char可以强行转化得出字符
@@ -28,7 +30,7 @@ public class FileReaderTest {
         //用utf-8解码
         Reader read = new InputStreamReader(
                 new FileInputStream(
-                        new File("/home/anla7856/workspace/io.examples/pom.xml")),"UTF-8");
+                        new File(FILE_NAME)),"UTF-8");
         int data = read.read();
         while(data != -1){
             System.out.print((char)data);
@@ -37,7 +39,7 @@ public class FileReaderTest {
     }
 
     private static void writer() throws IOException{
-        Writer writer = new FileWriter("/home/anla7856/workspace/io.examples/output.txt");
+        Writer writer = new FileWriter(FILE_NAME);
         writer.write("Hello World Writer");    //不需要转码
         writer.close();
     }
@@ -55,7 +57,7 @@ public class FileReaderTest {
     }
 
     private static void seek() throws IOException{
-        RandomAccessFile file = new RandomAccessFile("/home/anla7856/workspace/io.examples/pom.xml", "rw");
+        RandomAccessFile file = new RandomAccessFile(FILE_NAME, "rw");
         file.seek(200);
         long pointer = file.getFilePointer();
         file.close();
