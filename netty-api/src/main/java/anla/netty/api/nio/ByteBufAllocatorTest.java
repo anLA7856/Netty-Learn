@@ -15,8 +15,12 @@ public class ByteBufAllocatorTest {
         System.out.println("测试buf回收====");
         ByteBufAllocator allocator = ByteBufAllocator.DEFAULT;
         // tiny
-        ByteBuf buf1 = allocator.directBuffer(495); // 分配的内存最大长度为496
-        System.out.printf("buf1: 0x%X%n", buf1.memoryAddress());
-        buf1.release(); // 此时会被回收到tiny 的512b格子中
+        ByteBuf buf1 = allocator.directBuffer(1); // 分配的内存最大长度为496
+        buf1.release();
+        ByteBuf buf2 = allocator.directBuffer(16777); // 分配的内存最大长度为496
+        buf2.writeBytes(new byte[]{1});
+        buf2.writeBytes(new byte[]{2});
+        System.out.printf("buf1: 0x%X%n", buf2.memoryAddress());
+        buf2.release(); // 此时会被回收到tiny 的512b格子中
     }
 }
