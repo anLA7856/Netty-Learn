@@ -1,4 +1,4 @@
-package anla.netty.api.bytebuf;
+package anla.netty.api.nio;
 
 import io.netty.util.Recycler;
 import lombok.Data;
