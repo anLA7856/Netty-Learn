@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <jackson-version>2.9.8</jackson-version>
+        <jackson-version>2.12.1</jackson-version>
         <netty-all.version>4.1.38.Final</netty-all.version>
         <netty-all-five.version>5.0.0.Alpha1</netty-all-five.version>
         <lombok.version>1.16.12</lombok.version>
